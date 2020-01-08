@@ -17,6 +17,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mContext = this;
-		mAppDatabase = ((AppApplication)getApplication()).getAppDatabase();
+
+//		mAppDatabase = ((AppApplication)getApplication()).getAppDatabase();
+
+		mAppDatabase=AppDatabase.getAppDatabase(this);
 	}
 }

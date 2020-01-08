@@ -40,8 +40,12 @@ public class User {
 	private String  address;
 	@ColumnInfo(name="user_phone")
 	private String  phone;
+	@ColumnInfo(name="user_sex")
+	private String sex;
+
 	@ColumnInfo(name="user_age")
 	private Integer age;
+
 
 	@Ignore //制定某个字段不作为表中的一列需要添加@Ignore注解,该字段不会映射到User表中。
 	Bitmap picture;
@@ -56,6 +60,14 @@ public class User {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 	public void setName(String name) {
@@ -92,9 +104,16 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User{" + "uid=" + uid + ", name='" + name + '\'' + ", address='" + address + '\'' + ", phone='" + phone + '\'' + ", age=" +
-			   age + '}';
+		return "User{" +
+				"uid=" + uid +
+				", name='" + name + '\'' +
+				", address='" + address + '\'' +
+				", phone='" + phone + '\'' +
+				", sex='" + sex + '\'' +
+				", age=" + age +
+				'}';
 	}
+
 
 //	@Embedded
 //	public Address mAddress;

@@ -14,10 +14,12 @@ public class AppApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		mAppDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "android_room_dev.db")
-						   .allowMainThreadQueries()
-						   .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
-						   .build();
+//		mAppDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "android_room_dev.db")
+//						   .allowMainThreadQueries()
+//						   .addMigrations(MIGRATION_1_2,MIGRATION_2_3,MIGRATION_3_4)
+//						   .build();
+
+		AppDatabase.getAppDatabase(this);
 	}
 
 	public AppDatabase getAppDatabase() {
@@ -42,6 +44,16 @@ public class AppApplication extends Application {
 		public void migrate(SupportSQLiteDatabase database) {
 			database.execSQL(
 				"CREATE TABLE IF NOT EXISTS `book` (`uid` INTEGER PRIMARY KEY autoincrement, `name` TEXT , `userId` INTEGER, 'time' INTEGER)");
+		}
+	};
+
+	/**
+	 * 数据库版本 3->4 新增book表格
+	 */
+	static final Migration MIGRATION_3_4 = new Migration(3, 4) {
+		@Override
+		public void migrate(SupportSQLiteDatabase database) {
+			database.execSQL("ALTER TABLE User ADD COLUMN sex String");
 		}
 	};
 }
