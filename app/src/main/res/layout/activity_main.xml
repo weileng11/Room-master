@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_add_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加User记录"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_get_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询User记录"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_queryone_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询User单条记录"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_update_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新User单条记录"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_delete_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除User记录"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/button_add_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加Book记录"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_get_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询Book记录"
+        android:textAllCaps="false" />
+
+</LinearLayout>
