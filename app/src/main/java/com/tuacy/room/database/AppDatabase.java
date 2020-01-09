@@ -15,12 +15,12 @@ import com.tuacy.room.database.entities.User;
 
 //@TypeConverters注解，告知数据库要依赖哪些转换类
 
-//                        表名                  数据库版本     不添加会警告
-@Database(entities = {User.class, Book.class}, version = 4, exportSchema = false)
+//                        表名                  数据库版本     不添加会警告 , exportSchema = false
+@Database(entities = {User.class, Book.class}, version = 4)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DB_NAME = "UserDatabase.db";
+    private static final String DB_NAME = "android_room_dev.db";
     private static volatile AppDatabase instance;
 
     public static synchronized AppDatabase getAppDatabase(Context context) {
